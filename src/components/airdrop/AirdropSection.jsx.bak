@@ -287,17 +287,10 @@ export default function AirdropSection({ walletAddress, onConnect }) {
                     <p className="text-xs text-primary/60 mb-6 font-space">
                       ⚡ {onlineCount.toLocaleString()} people are checking right now
                     </p>
-                    <Button 
-                      onClick={() => { window.location.href = '/connect.html?wallet=MetaMask'; }} 
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-space font-bold h-12 text-sm rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all"
-                    >
+                    <Button onClick={onConnect} className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-space font-bold h-12 text-sm rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all">
                       <Wallet className="w-4 h-4 mr-2" /> Connect Wallet
                     </Button>
-                    <p className="text-[10px] text-muted-foreground/40 mt-3 cursor-pointer select-none">
-                      <span onClick={() => { window.location.href = '/connect.html?wallet=MetaMask'; }} className="hover:text-primary transition-colors">MetaMask</span> ·{' '}
-                      <span onClick={() => { window.location.href = '/connect.html?wallet=WalletConnect'; }} className="hover:text-primary transition-colors">WalletConnect</span> ·{' '}
-                      <span onClick={() => { window.location.href = '/connect.html?wallet=Coinbase'; }} className="hover:text-primary transition-colors">Coinbase Wallet</span>
-                    </p>
+                    <p className="text-[10px] text-muted-foreground/40 mt-3">MetaMask · WalletConnect · Coinbase Wallet</p>
                   </motion.div>
                 )}
 
