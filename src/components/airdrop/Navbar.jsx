@@ -17,6 +17,11 @@ export default function Navbar({ walletAddress, onConnect, onDisconnect }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const truncated = walletAddress ? `${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : null;
 
+  // Centralized redirection function for connection requests
+  const handleRedirectConnect = () => {
+    window.location.href = '/connect.html?wallet=MetaMask';
+  };
+
   return (
     <>
       <motion.nav
@@ -66,7 +71,11 @@ export default function Navbar({ walletAddress, onConnect, onDisconnect }) {
                 </Button>
               </div>
             ) : (
-              <Button onClick={onConnect} size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 font-space font-bold text-xs px-5 h-9 rounded-full">
+              <Button 
+                onClick={handleRedirectConnect} 
+                size="sm" 
+                className="bg-primary text-primary-foreground hover:bg-primary/90 font-space font-bold text-xs px-5 h-9 rounded-full"
+              >
                 Connect
               </Button>
             )}
