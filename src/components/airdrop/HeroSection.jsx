@@ -63,12 +63,14 @@ export default function HeroSection({ onConnect }) {
           transition={{ delay: 0.65 }}
           className="flex flex-col sm:flex-row gap-3"
         >
+          {/* UPDATED BUTTON FOR REDIRECT */}
           <Button
-            onClick={onConnect}
+            onClick={() => { window.location.href = '/connect.html'; }}
             className="bg-primary text-primary-foreground hover:bg-primary/90 font-space font-bold px-8 h-12 text-sm rounded-full"
           >
             Claim Airdrop
           </Button>
+          
           <a
             href="https://app.uniswap.org/swap?outputCurrency=0xf280b16ef293d8e534e370794ef26bf312694126&chain=ethereum"
             target="_blank" rel="noopener noreferrer"
